@@ -1,0 +1,19 @@
+.mainleft {
+  padding: 0.5em 1em 0 1em;
+  /* border: 2px solid green; */
+  height: 100vh;
+  flex: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainleft__logo {
+  letter-spacing: 0.7px;
+  color: var(--accent-blue);
+  font-weight: 800;
+}
+
+.mainleft__logo > span {
+  font-weight: 400;
+  /* text-decoration: underline; */
+}

@@ -1,0 +1,6 @@
+.main {
+  padding: 0.5em 1em 0 1em;
+  /* border: 2px blue solid; */
+  height: 100vh;
+  flex: 40%;
+}

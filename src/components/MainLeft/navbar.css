@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__btn {
+  cursor: pointer;
+  padding: 1em;
+  width: 60%;
+  margin: 1em auto;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  background-color: var(--accent-blue);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 8px 15px #eff2fc;
+}
+.navbar__btn:hover {
+  transform: scale(1.05);
+}

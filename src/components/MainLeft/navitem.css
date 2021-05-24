@@ -1,0 +1,25 @@
+.navitem {
+  margin: 0.25em 0.5em;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  border-radius: 30px;
+}
+
+.navitem:hover {
+  color: var(--accent-blue);
+  /* background-color: #e8f5fe; */
+  background-color: #eff2fc;
+  cursor: pointer;
+}
+
+.navitem > h1 {
+  margin-left: 1em;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.navitem--default {
+  color: var(--accent-blue);
+}
