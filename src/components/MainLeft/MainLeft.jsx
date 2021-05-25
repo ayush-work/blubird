@@ -1,6 +1,7 @@
 import React from "react";
 import "./mainleft.css";
 import Navbar from "./Navbar";
+import UserProfile from "./UserProfile";
 const MainLeft = () => {
   return (
     <div className="mainleft">
@@ -8,9 +9,7 @@ const MainLeft = () => {
         blu<span>Bird</span>
       </h1>
       <Navbar></Navbar>
-      {/* Navbar {NavItems} {Tweet} */}
-      {/* User Profile */}
-      {/*    */}
+      <UserProfile></UserProfile>
     </div>
   );
 };

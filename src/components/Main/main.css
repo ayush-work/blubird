@@ -1,6 +1,19 @@
 .main {
-  padding: 0.5em 1em 0 1em;
-  /* border: 2px blue solid; */
   height: 100vh;
-  flex: 40%;
+  flex: 50%;
+  background-color: #eff2fc;
+}
+.main__heading {
+  padding-top: 0.5em;
+  border-left: 1px solid #eff2fc;
+  z-index: 100;
+  width: 100%;
+  margin-bottom: 0.75em;
+  background-color: #fff;
+  border-bottom: 0.5px solid #eff2fc;
+}
+.main__heading > h1 {
+  font-size: 1.5rem;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
 }

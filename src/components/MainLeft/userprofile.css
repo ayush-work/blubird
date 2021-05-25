@@ -1,0 +1,29 @@
+.userprofile {
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+}
+
+.userprofile__info {
+  margin-left: 0.5em;
+  font-size: 0.6rem;
+}
+.userprofile__info > h1 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.userprofile__info > h2 {
+  font-weight: 400;
+  color: var(--text-grey);
+  font-size: 0.8rem;
+}
+.userprofile__setting {
+  margin-left: 0.5em;
+}
+.MuiAvatar-root {
+  margin-top: 0.25em;
+}

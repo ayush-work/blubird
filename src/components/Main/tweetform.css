@@ -1,0 +1,59 @@
+.tweetform {
+  margin: 0 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.tweetform__top {
+  display: flex;
+}
+.tweetform__top > textarea {
+  resize: none;
+  margin-left: 0.5em;
+  padding: 0.5em 0.25em;
+  width: 100%;
+  font-size: 1.1rem;
+  background-color: transparent;
+  outline: none;
+}
+.tweetform__bottom {
+  width: 90%;
+  align-self: flex-end;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tweetform__bottom__icons {
+  color: var(--accent-blue);
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.tweetform__bottom__btn {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  background-color: var(--accent-blue);
+  box-shadow: 0px 8px 15px #eff2fc;
+}
+.tweet-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.tweet-icons:hover {
+  background-color: #eff2fc;
+}

@@ -1,0 +1,13 @@
+.mainbody {
+  overflow-y: scroll;
+  height: 95vh;
+}
+.mainbody::-webkit-scrollbar {
+  display: none;
+}
+
+/* .divider {
+  width: 120%;
+  height: 10px;
+  background-color: #eff2fc;
+} */
