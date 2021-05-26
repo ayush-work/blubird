@@ -14,8 +14,8 @@ const Feeds = () => {
   });
   return (
     <div className="feeds">
-      {posts.map((post) => {
-        return <Feed {...post}></Feed>;
+      {posts.map((post, idx) => {
+        return <Feed {...post} key={idx}></Feed>;
       })}
     </div>
   );
