@@ -4,7 +4,7 @@ import ProfilePic from "../../pp.jpeg";
 import "./feed.css";
 import "boxicons";
 
-const Feed = ({ imgURL, desc, uName, uID }) => {
+const Feed = ({ imgURL, desc, uName, uID, verified }) => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
@@ -19,11 +19,14 @@ const Feed = ({ imgURL, desc, uName, uID }) => {
           ></Avatar>
           <div className="feed__top__info">
             <h1>{uName}</h1>
-            <box-icon
-              type="solid"
-              name="badge-check"
-              color="#5e7ce2"
-            ></box-icon>
+            {verified && (
+              <box-icon
+                type="solid"
+                name="badge-check"
+                color="#5e7ce2"
+              ></box-icon>
+            )}
+
             <h2>@{uID}</h2>
           </div>
         </div>

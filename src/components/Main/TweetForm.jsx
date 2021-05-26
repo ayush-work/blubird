@@ -3,42 +3,63 @@ import Avatar from "@material-ui/core/Avatar";
 import ProfilePic from "../../pp.jpeg";
 import "./tweetform.css";
 import "boxicons";
-
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/userSlice";
+import { db } from "../../firebase";
 const TweetForm = () => {
+  const user = useSelector(selectUser);
   const [input, setInput] = useState("");
-  const [msg, setMsg] = useState("Bluweet");
+  const [image, setImage] = useState("");
+  const [showImg, setShowImg] = useState(false);
   const inputHandler = (event) => {
     setInput(event.target.value);
   };
 
   const clickHandler = () => {
-    if (input) {
-      //   setMsg("Sending");
-      console.log(input);
+    if (input && user) {
+      db.collection("posts").add({
+        uName: user?.userName,
+        uID: user?.uID,
+        desc: input,
+        imgURL: image,
+      });
     }
-    // setTimeout(() => {
-    //   setMsg("Bluweet");
-    // }, 2000);
-
     setInput("");
+    setImage("");
+    setShowImg(!showImg);
+  };
+  const getImg = () => {
+    setShowImg(!showImg);
   };
 
   const accentBlue = "#5e7ce2";
   return (
     <div className="tweetform">
       <div className="tweetform__top">
-        <Avatar src={ProfilePic}></Avatar>
-        <textarea
-          maxLength="100"
-          onChange={inputHandler}
-          type="text"
-          placeholder="What's Cooking?"
-          value={input}
-        />
+        <Avatar src={user?.photoURL}></Avatar>
+        <div className="tweetform__inputs">
+          <textarea
+            maxLength="100"
+            onChange={inputHandler}
+            type="text"
+            placeholder="What's Cooking?"
+            value={input}
+          />
+          {showImg && (
+            <textarea
+              className="tweetform__img"
+              type="text"
+              placeholder="paste image url here"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+          )}
+        </div>
       </div>
+
       <div className="tweetform__bottom">
         <div className="tweetform__bottom__icons">
-          <div className="tweet-icons">
+          <div className="tweet-icons" onClick={getImg}>
             <box-icon name="photo-album" color={accentBlue}></box-icon>
           </div>
           <div className="tweet-icons">
@@ -60,7 +81,7 @@ const TweetForm = () => {
         </div>
 
         <button className="tweetform__bottom__btn" onClick={clickHandler}>
-          {msg}
+          Post
         </button>
       </div>
     </div>

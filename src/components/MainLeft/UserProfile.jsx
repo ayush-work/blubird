@@ -2,15 +2,21 @@ import React from "react";
 import "boxicons";
 import "./userprofile.css";
 import Avatar from "@material-ui/core/Avatar";
-import ProfilePic from "../../pp.jpeg";
+// import ProfilePic from "../../pp.jpeg";
+// import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../store/userSlice";
 const UserProfile = () => {
+  const user = useSelector(selectUser);
+
   return (
     <div className="userprofile">
-      <Avatar src={ProfilePic}></Avatar>
+      <Avatar src={user?.photoURL}></Avatar>
 
       <div className="userprofile__info">
-        <h1>Ayush</h1>
-        <h2>@idntknw0_0</h2>
+        <h1>{user?.userName}</h1>
+        <h2>@{user?.uID}</h2>
       </div>
       <div className="userprofile__setting">
         <box-icon name="dots-horizontal-rounded"></box-icon>

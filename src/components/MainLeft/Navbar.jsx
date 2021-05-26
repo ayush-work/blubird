@@ -10,7 +10,7 @@ const Navbar = () => {
       <Navitem icon="bookmark-alt" title="Bookmark"></Navitem>
       <Navitem icon="list-ul" title="List"></Navitem>
       <Navitem icon="user" title="Profile"></Navitem>
-      <button className="navbar__btn">Bluweet</button>
+      <button className="navbar__btn">Post</button>
       {/* navItems  */}
       {/* tweet */}
     </div>

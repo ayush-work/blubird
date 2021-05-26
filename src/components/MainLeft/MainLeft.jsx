@@ -2,12 +2,12 @@ import React from "react";
 import "./mainleft.css";
 import Navbar from "./Navbar";
 import UserProfile from "./UserProfile";
+import TrillLogo from "../../origami.png";
+import Logo from "../Logo";
 const MainLeft = () => {
   return (
     <div className="mainleft">
-      <h1 className="mainleft__logo">
-        blu<span>Bird</span>
-      </h1>
+      <Logo></Logo>
       <Navbar></Navbar>
       <UserProfile></UserProfile>
     </div>

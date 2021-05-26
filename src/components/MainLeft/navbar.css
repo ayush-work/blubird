@@ -5,13 +5,13 @@
 
 .navbar__btn {
   cursor: pointer;
-  padding: 1em;
+  padding: 0.75em;
   width: 60%;
   margin: 1em auto;
   border-radius: 30px;
   color: white;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 0.9rem;
   letter-spacing: 1px;
   background-color: var(--accent-blue);
   transition: all 0.2s ease-in-out;

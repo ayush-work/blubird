@@ -1,0 +1,8 @@
+.logo {
+  margin-top: 0.25em;
+  position: relative;
+  font-family: "Pattaya", sans-serif;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: var(--accent-blue);
+}

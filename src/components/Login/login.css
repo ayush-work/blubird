@@ -1,0 +1,23 @@
+.login {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eff2fc;
+  padding: 1em;
+  width: 300px;
+  /* height: 100px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login__btn {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.75em;
+  background-color: #de5246;
+  color: #fff;
+  cursor: pointer;
+}
