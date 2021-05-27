@@ -19,11 +19,14 @@ const TweetForm = () => {
   const clickHandler = () => {
     if (input && user) {
       db.collection("posts").add({
+        postID: "",
         uName: user?.userName,
         uID: user?.uID,
         desc: input,
         imgURL: image,
         timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+        photoURL: user?.photoURL,
+        likes: 0,
       });
     }
     setInput("");
