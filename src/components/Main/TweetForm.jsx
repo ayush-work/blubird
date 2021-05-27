@@ -27,6 +27,7 @@ const TweetForm = () => {
         timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
         photoURL: user?.photoURL,
         likes: 0,
+        likedBy: [],
       });
     }
     setInput("");
