@@ -7,9 +7,11 @@ import { db } from "../../firebase";
 const Feeds = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(snapshot.docs.map((doc) => doc.data()));
-    });
+    db.collection("posts")
+      .orderBy("timeStamp")
+      .onSnapshot((snapshot) => {
+        setPosts(snapshot.docs.map((doc) => doc.data()));
+      });
   }, []);
   return (
     <div className="feeds">
