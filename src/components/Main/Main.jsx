@@ -1,7 +1,7 @@
 import React from "react";
 import "./main.css";
 import MainBody from "./MainBody";
-const Main = ({ user }) => {
+const Main = () => {
   return (
     <>
       <div className="main">

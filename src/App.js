@@ -3,9 +3,9 @@ import MainRight from "./components/MainRight/MainRight";
 import Main from "./components/Main/Main";
 import Login from "./components/Login/Login";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Logo from "./components/Logo";
-import { useState, useEffect } from "react";
-import Loader from "./components/Loader";
+
+import { useEffect } from "react";
+
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "./store/userSlice";
@@ -26,9 +26,7 @@ function App() {
       );
     }
   }, [user]);
-  const [loginUser, setUser] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(user);
+
   return (
     <>
       {!user ? (

@@ -2,7 +2,7 @@ import React from "react";
 import TweetForm from "./TweetForm";
 import Feeds from "./Feeds";
 import "./mainbody.css";
-const MainBody = ({ user }) => {
+const MainBody = () => {
   return (
     <div className="mainbody">
       <TweetForm></TweetForm>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "boxicons";
 import "./navitem.css";
-const Navitem = ({ icon, title, type, isDefault }) => {
+const Navitem = ({ icon, title, isDefault }) => {
   const accentBlue = "#5e7ce2";
   const [color, setColor] = useState("black");
   return (

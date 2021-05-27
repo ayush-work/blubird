@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import ProfilePic from "../../pp.jpeg";
+
 import "./feed.css";
 import "boxicons";
 
@@ -37,7 +37,7 @@ const Feed = ({ imgURL, desc, uName, uID, verified }) => {
       <div className="feed__mid">
         <div className="feed__mid__text">{desc}</div>
         <div className="feed__mid__img">
-          <img src={imgURL} />
+          <img src={imgURL} alt="" />
         </div>
       </div>
 

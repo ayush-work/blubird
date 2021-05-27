@@ -3,9 +3,7 @@ import Logo from "../Logo";
 import { auth, provider } from "../../firebase";
 import "./login.css";
 const loginUser = () => {
-  setTimeout(() => {
-    auth.signInWithPopup(provider).catch(alert);
-  }, 1000);
+  auth.signInWithPopup(provider).catch(alert);
 };
 const Login = () => {
   return (

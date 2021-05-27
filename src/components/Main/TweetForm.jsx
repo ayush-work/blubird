@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import ProfilePic from "../../pp.jpeg";
 import "./tweetform.css";
 import "boxicons";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../store/userSlice";
 import { db } from "../../firebase";
+import firebase from "firebase";
+
 const TweetForm = () => {
   const user = useSelector(selectUser);
   const [input, setInput] = useState("");
@@ -22,11 +23,12 @@ const TweetForm = () => {
         uID: user?.uID,
         desc: input,
         imgURL: image,
+        timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
     setInput("");
     setImage("");
-    setShowImg(!showImg);
+    setShowImg(false);
   };
   const getImg = () => {
     setShowImg(!showImg);
