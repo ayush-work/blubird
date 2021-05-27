@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../../store/userSlice";
 import { db } from "../../firebase";
 import firebase from "firebase";
+import moment from "moment";
 
 const TweetForm = () => {
   const user = useSelector(selectUser);
@@ -25,6 +26,7 @@ const TweetForm = () => {
         desc: input,
         imgURL: image,
         timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+        postTime: moment().format("lll"),
         photoURL: user?.photoURL,
         likes: 0,
         likedBy: [],

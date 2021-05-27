@@ -33,3 +33,10 @@
   font-weight: 400;
   /* text-decoration: underline; */
 }
+
+@media screen and (max-width: 998px) {
+  .mainleft {
+    flex-direction: row;
+    margin-top: 5em;
+  }
+}

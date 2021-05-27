@@ -17,3 +17,8 @@
   margin-left: 0.5em;
   margin-bottom: 0.5em;
 }
+@media screen and (max-width: 998px) {
+  .main__heading {
+    display: none;
+  }
+}

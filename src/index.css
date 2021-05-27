@@ -35,3 +35,9 @@ code {
   margin: 0 auto;
   justify-content: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+  }
+}

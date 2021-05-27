@@ -6,8 +6,8 @@
   display: none;
 }
 
-/* .divider {
-  width: 120%;
-  height: 10px;
-  background-color: #eff2fc;
-} */
+@media screen and (max-width: 998px) {
+  .mainbody {
+    margin-top: 1em;
+  }
+}

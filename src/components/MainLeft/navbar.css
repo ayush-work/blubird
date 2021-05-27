@@ -20,3 +20,9 @@
 .navbar__btn:hover {
   transform: scale(1.05);
 }
+@media screen and (max-width: 998px) {
+  .navbar {
+    flex-direction: row;
+    display: none;
+  }
+}

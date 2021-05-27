@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Feed from "./Feed";
 import "./feeds.css";
-import moment from "moment";
+import FlipMove from "react-flip-move";
 
 import { db } from "../../firebase";
 
 const Feeds = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(
-        snapshot.docs.map((doc) => {
-          return { ...doc.data(), postID: doc.id };
-        })
-      );
-    });
+    db.collection("posts")
+      .orderBy("timeStamp", "desc")
+      .onSnapshot((snapshot) => {
+        setPosts(
+          snapshot.docs.map((doc) => {
+            return { ...doc.data(), postID: doc.id };
+          })
+        );
+      });
   }, []);
-  console.log(posts);
+
   return (
     <div className="feeds">
-      {posts.map((post, idx) => {
-        return <Feed {...post} key={idx}></Feed>;
-      })}
+      <FlipMove>
+        {posts?.map((post, idx) => {
+          return <Feed {...post} key={idx}></Feed>;
+        })}
+      </FlipMove>
     </div>
   );
 };
