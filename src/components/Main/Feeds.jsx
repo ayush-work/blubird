@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Feed from "./Feed";
 import "./feeds.css";
 import FlipMove from "react-flip-move";
+import { Flipper, Flipped } from "react-flip-toolkit";
 
 import { db } from "../../firebase";
 
 const Feeds = () => {
+  let i = 0;
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     db.collection("posts")
@@ -21,11 +23,11 @@ const Feeds = () => {
 
   return (
     <div className="feeds">
-      <FlipMove>
+      <Flipper flipKey={++i}>
         {posts?.map((post, idx) => {
-          return <Feed {...post} key={idx}></Feed>;
+          return <Feed {...post} key={idx} flipId={i}></Feed>;
         })}
-      </FlipMove>
+      </Flipper>
     </div>
   );
 };

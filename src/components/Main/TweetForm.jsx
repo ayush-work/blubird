@@ -25,6 +25,7 @@ const TweetForm = () => {
   const imgUploader = () => {
     const uploadTask = storage.ref(`/images/${uploadImg.name}`).put(uploadImg);
     setFileUploading(true);
+
     uploadTask.on(
       "state_changed",
       (snapShot) => {
@@ -40,6 +41,8 @@ const TweetForm = () => {
           .getDownloadURL()
           .then((fireBaseUrl) => {
             setFileUploading(false);
+            setIsUploading(false);
+            setDisableBtn(false);
             setFileImgUrl((prevObject) => ({
               ...prevObject,
               imgURL: fireBaseUrl,
@@ -47,7 +50,6 @@ const TweetForm = () => {
           });
       }
     );
-    setDisableBtn(false);
   };
   const clickHandler = () => {
     if (input || uploadImg) {
@@ -100,9 +102,11 @@ const TweetForm = () => {
             ref={inputRef}
           />
           {isUploading && (
-            <div onClick={imgUploader} className="uploader__icon">
-              <box-icon name="upload" color="#00ab66"></box-icon>
-            </div>
+            <>
+              <div onClick={imgUploader} className="uploader__icon">
+                <box-icon name="upload" color="#00ab66"></box-icon>
+              </div>
+            </>
           )}
 
           <h5>{fileUploding ? "Uploading..." : ""}</h5>
