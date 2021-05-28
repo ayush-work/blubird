@@ -77,3 +77,43 @@
 .tweet-icons:hover {
   background-color: #eff2fc;
 }
+
+.tweetform__input__img {
+  width: 80%;
+  margin-right: 0.5em;
+  border: 2px solid var(--accent-blue);
+  border-radius: 5px;
+  padding: 0.25em;
+}
+.tweetform__upload__btn {
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: #00ab66;
+  color: #fff;
+}
+.tweetform__input__img::-webkit-file-upload-button {
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: var(--accent-blue);
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.tweetform__bottom__btns {
+  display: flex;
+  align-items: center;
+}
+
+.uploader__icon {
+  padding: 0.25em;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  height: 50%;
+}
+.uploader__icon:hover {
+  background-color: #e6f7f0;
+}
+.disable {
+  background-color: #dfe5f9;
+}

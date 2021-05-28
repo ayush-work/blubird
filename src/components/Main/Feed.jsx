@@ -9,7 +9,7 @@ import firebase from "firebase";
 const Feed = forwardRef(
   (
     {
-      imgURL,
+      imgUrl,
       desc,
       uName,
       uID,
@@ -72,7 +72,7 @@ const Feed = forwardRef(
           <div className="feed__mid">
             <div className="feed__mid__text">{desc}</div>
             <div className="feed__mid__img">
-              <img src={imgURL} alt="" />
+              <img src={imgUrl} alt="" />
             </div>
           </div>
 
