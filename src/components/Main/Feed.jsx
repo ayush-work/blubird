@@ -33,9 +33,7 @@ const Feed = forwardRef(
       setToggle(!toggle);
     };
     const handleLikes = () => {
-      // setShowLikers(!showLikers);
       if (!likedBy?.includes(user?.photoURL)) {
-        setLikeCount(true);
         db.collection("posts")
           .doc(postID)
           .update("likes", likes + 1);
@@ -44,9 +42,8 @@ const Feed = forwardRef(
           .update({
             likedBy: firebase.firestore.FieldValue.arrayUnion(user?.photoURL),
           });
+        setLikeCount(true);
       }
-
-      console.log("clicked");
     };
 
     return (
@@ -100,23 +97,22 @@ const Feed = forwardRef(
                 <h6>{postTime}</h6>
               </div>
             </div>
-            {likeCount && (
-              <div className="liker__container">
-                <div></div>
-                <div className="like__modal">
-                  <h1 className="likedby">Liked By:</h1>
-                  {likedBy?.map((liker, idx) => {
-                    return (
-                      <img
-                        src={liker}
-                        key={idx}
-                        className="like__modal__avatar"
-                      ></img>
-                    );
-                  })}
-                </div>
+
+            <div className="liker__container">
+              <div></div>
+              <div className="like__modal">
+                <h1 className="likedby">Liked By:</h1>
+                {likedBy?.map((liker, idx) => {
+                  return (
+                    <img
+                      src={liker}
+                      key={idx}
+                      className="like__modal__avatar"
+                    ></img>
+                  );
+                })}
               </div>
-            )}
+            </div>
 
             {toggle ? (
               <div className="comment__box">
